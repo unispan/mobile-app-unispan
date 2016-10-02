@@ -1,5 +1,6 @@
 package pe.com.unispan.mobile.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -57,6 +58,8 @@ public class LoginActivity extends AppCompatActivity  {
         if (!user.getLogin().isEmpty()) {
             Toast.makeText(getApplicationContext(),"Hola " + user.getLogin(),Toast.LENGTH_SHORT).show();
             finish();
+
+            showMenuActivity();
         }
     }
 
@@ -108,6 +111,14 @@ public class LoginActivity extends AppCompatActivity  {
 
             User userModel = User.getInstance();
             userModel.setLogin(user);
+            userModel.setUserName(user);
+
+            showMenuActivity();
         }
+    }
+
+    private void showMenuActivity() {
+        Intent mainActivity = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(mainActivity);
     }
 }

@@ -19,11 +19,8 @@ public class MobileApp extends SugarApp {
         Log.d("STATE", "Leer de memoria");
 
         ExternalStorage externalStorage = new ExternalStorage(getApplicationContext());
-        User user = User.getInstance();
-        user.setLogin(externalStorage.getKeptName());
-        //mEmailView.setText(email);
-/*
-        Intent loginActivity = new Intent(MobileApp.this, LoginActivity.class);
-        startActivity(loginActivity);*/
+        User userModel = User.getInstance();
+        userModel.setLogin(externalStorage.getKeptName());
+        userModel.setUserName(externalStorage.getKeptName()); // Se debe cambiar por el nombre real
     }
 }
