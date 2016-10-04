@@ -3,6 +3,8 @@ package pe.com.unispan.mobile.activities;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,11 +16,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import pe.com.unispan.mobile.MobileApp;
 import pe.com.unispan.mobile.R;
+import pe.com.unispan.mobile.adapters.DevolutionAdapter;
+import pe.com.unispan.mobile.model.DevolutionsService;
 import pe.com.unispan.mobile.model.User;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    RecyclerView devolutionRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +61,19 @@ public class MainActivity extends AppCompatActivity
         User userModel = User.getInstance();
         userNameTextView.setText(userModel.getUserName());
         loginTextView.setText(userModel.getLogin());
+
+        //
+        devolutionRecyclerView = (RecyclerView) findViewById(R.id.devolutionRecyclerView);
+        devolutionRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        devolutionRecyclerView.setAdapter(new DevolutionAdapter(getService().getDevolutions()));
+    }
+
+    @Override
+    protected void onResume() {
+        ((DevolutionAdapter)devolutionRecyclerView.getAdapter()).setDevolution(getService().getDevolutions());
+
+        devolutionRecyclerView.getAdapter().notifyDataSetChanged();
+        super.onResume();
     }
 
     @Override
@@ -111,5 +131,9 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private DevolutionsService getService() {
+        return ((MobileApp) getApplication()).getService();
     }
 }

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/UnispanMobile.iml" filepath="$PROJECT_DIR$/UnispanMobile.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mobile-app-unispan.iml" filepath="$PROJECT_DIR$/mobile-app-unispan.iml" />
     </modules>
   </component>
 </project>

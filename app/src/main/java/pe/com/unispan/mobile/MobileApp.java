@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.orm.SugarApp;
 
+import pe.com.unispan.mobile.model.DevolutionsService;
 import pe.com.unispan.mobile.model.User;
 import pe.com.unispan.mobile.storage.ExternalStorage;
 
@@ -12,6 +13,8 @@ import pe.com.unispan.mobile.storage.ExternalStorage;
  */
 
 public class MobileApp extends SugarApp {
+    private DevolutionsService service = new DevolutionsService();
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -22,5 +25,13 @@ public class MobileApp extends SugarApp {
         User userModel = User.getInstance();
         userModel.setLogin(externalStorage.getKeptName());
         userModel.setUserName(externalStorage.getKeptName()); // Se debe cambiar por el nombre real
+    }
+
+    public DevolutionsService getService() {
+        return service;
+    }
+
+    public void setService(DevolutionsService service) {
+        this.service = service;
     }
 }
