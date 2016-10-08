@@ -57,10 +57,10 @@ public class MainActivity extends AppCompatActivity
         TextView userNameTextView = (TextView) hView.findViewById(R.id.userNameTextView);
         TextView loginTextView = (TextView) hView.findViewById(R.id.loginTextView);
 
-        // Para obtener los datos del usuario
+/*        // Para obtener los datos del usuario
         User userModel = User.getInstance();
         userNameTextView.setText(userModel.getUserName());
-        loginTextView.setText(userModel.getLogin());
+        loginTextView.setText(userModel.getLogin());*/
 
         //
         devolutionRecyclerView = (RecyclerView) findViewById(R.id.devolutionRecyclerView);
@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onResume() {
-        ((DevolutionAdapter)devolutionRecyclerView.getAdapter()).setDevolution(getService().getDevolutions());
-
+        ((DevolutionAdapter)devolutionRecyclerView.getAdapter())
+                .setDevolutions(getService().getDevolutions());
         devolutionRecyclerView.getAdapter().notifyDataSetChanged();
         super.onResume();
     }

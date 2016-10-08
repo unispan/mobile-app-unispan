@@ -3,6 +3,8 @@ package pe.com.unispan.mobile.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import pe.com.unispan.mobile.R;
+
 /**
  * Created by emarquez on 3/10/2016.
  */
@@ -10,32 +12,35 @@ import java.util.List;
 public class DevolutionsService {
     private List<Devolution> devolutions = new ArrayList<>();
 
-
     public List<Devolution> getDevolutions() {
-        devolutions = Devolution.listAll(Devolution.class);
+/*        devolutions = Devolution.listAll(Devolution.class);
 
         if (devolutions.size() == 0) {
             this.inicializeData();
         }
 
-        return devolutions;
+        return devolutions;*/
+        return null;
     }
 
-    public void setDevolutions(List<Devolution> devolutions) {
-        this.devolutions = devolutions;
-    }
-
-    public boolean addDevolution(Integer order, String customer, String schedule, String building) {
-        Devolution devolution = new Devolution(order, customer, schedule, building);
+    public boolean addDevolution(Integer order, String customer, String schedule, String building, String pictureUri) {
+/*        if(findDevolutionByOrder(order) != null) return false;
+        Devolution devolution = new Devolution(order, customer, schedule, building, pictureUri);
         this.devolutions.add(devolution);
-
-        devolution.save();
-
+        devolution.save();*/
         return true;
     }
 
+    public Devolution findDevolutionByOrder(Integer order) {
+        Devolution devolution = null;
+/*        List<Devolution> results = Devolution.find(Devolution.class, "order = ?", order.toString());
+        if(results != null && results.size() > 0)
+            devolution = results.get(0);*/
+        return devolution;
+    }
+
     private void inicializeData() {
-        this.addDevolution(1, "Los Constructores SAC", "08:00 - 10:00", "Edificio Los Alamos");
-        this.addDevolution(2, "GyN SAC", "10:00 - 12:00", "CC Los Laureles");
+        this.addDevolution(1, "Los Constructores SAC", "08:00 - 10:00", "Edificio Los Alamos", Integer.toString(R.mipmap.ic_scheduled));
+        this.addDevolution(2, "GyN SAC", "10:00 - 12:00", "CC Los Laureles", Integer.toString(R.mipmap.ic_scheduled));
     }
 }

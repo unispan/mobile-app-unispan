@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity  {
     protected void onStart() {
         super.onStart();
 
-        Log.d("STATE", "Validar usuario");
+/*        Log.d("STATE", "Validar usuario");
 
         User user = User.getInstance();
         if (!user.getLogin().isEmpty()) {
@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity  {
             finish();
 
             showMenuActivity();
-        }
+        }*/
     }
 
     /**
@@ -105,13 +105,13 @@ public class LoginActivity extends AppCompatActivity  {
             // form field with an error.
             focusView.requestFocus();
         } else {
-            Log.d("STATE", "Grabar en memoria y en el modelo");
+/*            Log.d("STATE", "Grabar en memoria y en el modelo");
             ExternalStorage externalStorage = new ExternalStorage(getApplicationContext());
             externalStorage.setKeptName(user);
 
             User userModel = User.getInstance();
             userModel.setLogin(user);
-            userModel.setUserName(user);
+            userModel.setUserName(user);*/
 
             showMenuActivity();
         }

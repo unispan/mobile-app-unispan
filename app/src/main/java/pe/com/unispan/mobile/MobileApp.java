@@ -19,12 +19,12 @@ public class MobileApp extends SugarApp {
     public void onCreate() {
         super.onCreate();
 
-        Log.d("STATE", "Leer de memoria");
+/*        Log.d("STATE", "Leer de memoria");
 
         ExternalStorage externalStorage = new ExternalStorage(getApplicationContext());
         User userModel = User.getInstance();
         userModel.setLogin(externalStorage.getKeptName());
-        userModel.setUserName(externalStorage.getKeptName()); // Se debe cambiar por el nombre real
+        userModel.setUserName(externalStorage.getKeptName()); // Se debe cambiar por el nombre real*/
     }
 
     public DevolutionsService getService() {
