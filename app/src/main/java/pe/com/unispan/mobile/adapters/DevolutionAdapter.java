@@ -22,10 +22,10 @@ import pe.com.unispan.mobile.model.Devolution;
 
 public class DevolutionAdapter extends
         RecyclerView.Adapter<DevolutionAdapter.ViewHolder> {
-    private List<Devolution> devolutions;
+    private List<Devolution> devolution;
 
     public DevolutionAdapter(List<Devolution> devolution) {
-        this.setDevolutions(devolution);
+        this.setDevolution(devolution);
     }
 
     @Override
@@ -38,23 +38,23 @@ public class DevolutionAdapter extends
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(DevolutionAdapter.ViewHolder holder, final int position) {
         holder.customerTextView.setText(
-                getDevolutions().get(position).getCustomer());
+                getDevolution().get(position).getCustomer());
         holder.buildTextView.setText(
-                getDevolutions().get(position).getBuilding());
+                getDevolution().get(position).getBuilding());
         holder.pictureImageView.setImageResource(
                 Integer.parseInt(
-                        getDevolutions().get(position).getPictureUri()));
+                        getDevolution().get(position).getPictureUri()));
         // Make element clickable
         holder.devolutionCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent itemIntent = new Intent(view.getContext(), MainActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("customer", getDevolutions().get(position).getCustomer());
-                bundle.putString("build", getDevolutions().get(position).getBuilding());
-                bundle.putString("pictureUri", getDevolutions().get(position).getPictureUri());
+                bundle.putString("customer", getDevolution().get(position).getCustomer());
+                bundle.putString("build", getDevolution().get(position).getBuilding());
+                bundle.putString("pictureUri", getDevolution().get(position).getPictureUri());
                 itemIntent.putExtras(bundle);
                 view.getContext().startActivity(itemIntent);
             }
@@ -66,12 +66,12 @@ public class DevolutionAdapter extends
         return 0;
     }
 
-    public List<Devolution> getDevolutions() {
-        return devolutions;
+    public List<Devolution> getDevolution() {
+        return devolution;
     }
 
-    public void setDevolutions(List<Devolution> devolution) {
-        this.devolutions = devolution;
+    public void setDevolution(List<Devolution> devolution) {
+        this.devolution = devolution;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

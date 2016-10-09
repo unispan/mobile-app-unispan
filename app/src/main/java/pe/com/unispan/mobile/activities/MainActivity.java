@@ -1,5 +1,6 @@
 package pe.com.unispan.mobile.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,7 +20,7 @@ import android.widget.TextView;
 import pe.com.unispan.mobile.MobileApp;
 import pe.com.unispan.mobile.R;
 import pe.com.unispan.mobile.adapters.DevolutionAdapter;
-import pe.com.unispan.mobile.model.DevolutionsService;
+import pe.com.unispan.mobile.model.DevolutionService;
 import pe.com.unispan.mobile.model.User;
 
 public class MainActivity extends AppCompatActivity
@@ -34,10 +35,15 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        devolutionRecyclerView = (RecyclerView) findViewById(R.id.devolutionRecyclerView);
+        devolutionRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        devolutionRecyclerView.setAdapter(new DevolutionAdapter(getService().getDevolution()));
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startActivity(new Intent(view.getContext(),DevolutionActivity.class));
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
@@ -63,15 +69,13 @@ public class MainActivity extends AppCompatActivity
         loginTextView.setText(userModel.getLogin());*/
 
         //
-        devolutionRecyclerView = (RecyclerView) findViewById(R.id.devolutionRecyclerView);
-        devolutionRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        devolutionRecyclerView.setAdapter(new DevolutionAdapter(getService().getDevolutions()));
+
     }
 
     @Override
     protected void onResume() {
         ((DevolutionAdapter)devolutionRecyclerView.getAdapter())
-                .setDevolutions(getService().getDevolutions());
+                .setDevolution(getService().getDevolution());
         devolutionRecyclerView.getAdapter().notifyDataSetChanged();
         super.onResume();
     }
@@ -133,7 +137,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private DevolutionsService getService() {
+    private DevolutionService getService() {
         return ((MobileApp) getApplication()).getService();
     }
 }

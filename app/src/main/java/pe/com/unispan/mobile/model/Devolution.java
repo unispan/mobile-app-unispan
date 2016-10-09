@@ -6,7 +6,7 @@ import com.orm.SugarRecord;
  * Created by emarquez on 3/10/2016.
  */
 
-public class Devolution {
+public class Devolution extends SugarRecord {
     private Integer order;
     private String customer;
     private String schedule;
@@ -16,11 +16,16 @@ public class Devolution {
     public Devolution() {}
 
     public Devolution(Integer order, String customer, String schedule, String building, String pictureUri) {
-        this.order = order;
-        this.customer = customer;
-        this.schedule = schedule;
-        this.building = building;
-        this.pictureUri = pictureUri;
+        //this.order = order;
+        //this.customer = customer;
+        //this.schedule = schedule;
+        //this.building = building;
+        //this.pictureUri = pictureUri;
+        this.setOrder(order);
+        this.setCustomer(customer);
+        this.setSchedule(schedule);
+        this.setBuilding(building);
+        this.setPictureUri(pictureUri);
     }
 
     public Integer getOrder() {
