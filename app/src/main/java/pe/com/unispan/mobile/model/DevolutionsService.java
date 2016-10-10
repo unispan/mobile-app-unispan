@@ -9,42 +9,36 @@ import pe.com.unispan.mobile.R;
  * Created by Miguel-PC on 08/10/2016.
  */
 
-public class DevolutionService {
-    private List<Devolution> devolution = new ArrayList<>();
+public class DevolutionsService {
+    private List<Devolution> devolutions = new ArrayList<>();
 
-    public List<Devolution> getDevolution(){
-        devolution = Devolution.listAll(Devolution.class);
-        if(devolution.size() == 0){
-            this.initializeDate();
+    public List<Devolution> getDevolutions(){
+        devolutions = Devolution.listAll(Devolution.class);
+        if(devolutions.size() == 0){
+            this.initializeData();
         }
-        return devolution;
+        return devolutions;
     }
-
 
     public boolean addDevolution(Integer order, String customer, String schedule, String building, String pictureUri){
         if(findDevolutionByOrder(order) != null) return false;
-        Devolution devolution = new Devolution(order,customer,schedule,building,pictureUri);
-        this.devolution.add(devolution);
+        Devolution devolution = new Devolution(order, customer, schedule, building, pictureUri);
+        this.devolutions.add(devolution);
         devolution.save();
         return true;
     }
 
-
     public Devolution findDevolutionByOrder(Integer order){
         Devolution devolution = null;
-        List<Devolution> results = Devolution.find(Devolution.class, "order = ?", order.toString());
+        List<Devolution> results = Devolution.find(Devolution.class, "number_order = ?", order.toString());
         if(results !=null && results.size() > 0)
             devolution = results.get(0);
         return devolution;
     }
 
-    private void initializeDate(){
+    private void initializeData(){
         this.addDevolution(1, "Los Constructores SAC", "08:00 - 10:00", "Edificio Los Alamos", Integer.toString(R.mipmap.ic_scheduled));
         this.addDevolution(2, "GyN SAC", "10:00 - 12:00", "CC Los Laureles", Integer.toString(R.mipmap.ic_scheduled));
     }
-
-
-
-
 }
 

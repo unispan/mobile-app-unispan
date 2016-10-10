@@ -20,16 +20,16 @@ import pe.com.unispan.mobile.model.Devolution;
  * Created by emarquez on 3/10/2016.
  */
 
-public class DevolutionAdapter extends
-        RecyclerView.Adapter<DevolutionAdapter.ViewHolder> {
-    private List<Devolution> devolution;
+public class DevolutionsAdapter extends
+        RecyclerView.Adapter<DevolutionsAdapter.ViewHolder> {
+    private List<Devolution> devolutions;
 
-    public DevolutionAdapter(List<Devolution> devolution) {
-        this.setDevolution(devolution);
+    public DevolutionsAdapter(List<Devolution> devolutions) {
+        this.setDevolutions(devolutions);
     }
 
     @Override
-    public DevolutionAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public DevolutionsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(parent.getContext())
                 .inflate(R.layout.card_view, parent, false);
@@ -38,23 +38,23 @@ public class DevolutionAdapter extends
     }
 
     @Override
-    public void onBindViewHolder(DevolutionAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(DevolutionsAdapter.ViewHolder holder, final int position) {
         holder.customerTextView.setText(
-                getDevolution().get(position).getCustomer());
+                getDevolutions().get(position).getCustomer());
         holder.buildTextView.setText(
-                getDevolution().get(position).getBuilding());
+                getDevolutions().get(position).getBuilding());
         holder.pictureImageView.setImageResource(
                 Integer.parseInt(
-                        getDevolution().get(position).getPictureUri()));
+                        getDevolutions().get(position).getPictureUri()));
         // Make element clickable
         holder.devolutionCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent itemIntent = new Intent(view.getContext(), MainActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("customer", getDevolution().get(position).getCustomer());
-                bundle.putString("build", getDevolution().get(position).getBuilding());
-                bundle.putString("pictureUri", getDevolution().get(position).getPictureUri());
+                bundle.putString("customer", getDevolutions().get(position).getCustomer());
+                bundle.putString("build", getDevolutions().get(position).getBuilding());
+                bundle.putString("pictureUri", getDevolutions().get(position).getPictureUri());
                 itemIntent.putExtras(bundle);
                 view.getContext().startActivity(itemIntent);
             }
@@ -66,12 +66,12 @@ public class DevolutionAdapter extends
         return 0;
     }
 
-    public List<Devolution> getDevolution() {
-        return devolution;
+    public List<Devolution> getDevolutions() {
+        return devolutions;
     }
 
-    public void setDevolution(List<Devolution> devolution) {
-        this.devolution = devolution;
+    public void setDevolutions(List<Devolution> devolutions) {
+        this.devolutions = devolutions;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

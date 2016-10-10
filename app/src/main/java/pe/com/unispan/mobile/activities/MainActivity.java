@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -19,9 +20,8 @@ import android.widget.TextView;
 
 import pe.com.unispan.mobile.MobileApp;
 import pe.com.unispan.mobile.R;
-import pe.com.unispan.mobile.adapters.DevolutionAdapter;
-import pe.com.unispan.mobile.model.DevolutionService;
-import pe.com.unispan.mobile.model.User;
+import pe.com.unispan.mobile.adapters.DevolutionsAdapter;
+import pe.com.unispan.mobile.model.DevolutionsService;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,9 +35,10 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Log.d("Devolution", "Crear devolutionRecyclerView");
         devolutionRecyclerView = (RecyclerView) findViewById(R.id.devolutionRecyclerView);
         devolutionRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        devolutionRecyclerView.setAdapter(new DevolutionAdapter(getService().getDevolution()));
+        devolutionRecyclerView.setAdapter(new DevolutionsAdapter(getService().getDevolutions()));
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -74,8 +75,8 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onResume() {
-        ((DevolutionAdapter)devolutionRecyclerView.getAdapter())
-                .setDevolution(getService().getDevolution());
+        ((DevolutionsAdapter)devolutionRecyclerView.getAdapter())
+                .setDevolutions(getService().getDevolutions());
         devolutionRecyclerView.getAdapter().notifyDataSetChanged();
         super.onResume();
     }
@@ -137,7 +138,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private DevolutionService getService() {
+    private DevolutionsService getService() {
         return ((MobileApp) getApplication()).getService();
     }
 }

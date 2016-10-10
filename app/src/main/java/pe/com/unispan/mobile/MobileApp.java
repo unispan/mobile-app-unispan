@@ -1,19 +1,15 @@
 package pe.com.unispan.mobile;
 
-import android.util.Log;
-
 import com.orm.SugarApp;
 
-import pe.com.unispan.mobile.model.DevolutionService;
-import pe.com.unispan.mobile.model.User;
-import pe.com.unispan.mobile.storage.ExternalStorage;
+import pe.com.unispan.mobile.model.DevolutionsService;
 
 /**
  * Created by emarquez on 01/10/16.
  */
 
 public class MobileApp extends SugarApp {
-    private DevolutionService service = new DevolutionService();
+    private DevolutionsService service = new DevolutionsService();
 
   // @Override
   //  public void onCreate() {
@@ -27,11 +23,11 @@ public class MobileApp extends SugarApp {
         userModel.setUserName(externalStorage.getKeptName()); // Se debe cambiar por el nombre real*/
    // }
 
-    public DevolutionService getService() {
+    public DevolutionsService getService() {
         return service;
     }
 
-    public void setService(DevolutionService service) {
+    public void setService(DevolutionsService service) {
         this.service = service;
     }
 }
