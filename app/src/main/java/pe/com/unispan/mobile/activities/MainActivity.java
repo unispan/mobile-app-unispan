@@ -35,9 +35,11 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Log.d("Devolution", "Crear devolutionRecyclerView");
+        Log.d("Devolution", "Crear devolutionRecyclerView 1");
         devolutionRecyclerView = (RecyclerView) findViewById(R.id.devolutionRecyclerView);
+        Log.d("Devolution", "Crear devolutionRecyclerView 2");
         devolutionRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        Log.d("Devolution", "Crear devolutionRecyclerView 3");
         devolutionRecyclerView.setAdapter(new DevolutionsAdapter(getService().getDevolutions()));
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -75,9 +77,9 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onResume() {
-        ((DevolutionsAdapter)devolutionRecyclerView.getAdapter())
+/*        ((DevolutionsAdapter)devolutionRecyclerView.getAdapter())
                 .setDevolutions(getService().getDevolutions());
-        devolutionRecyclerView.getAdapter().notifyDataSetChanged();
+        devolutionRecyclerView.getAdapter().notifyDataSetChanged();*/
         super.onResume();
     }
 

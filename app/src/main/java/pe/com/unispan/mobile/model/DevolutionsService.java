@@ -8,7 +8,6 @@ import pe.com.unispan.mobile.R;
 /**
  * Created by Miguel-PC on 08/10/2016.
  */
-
 public class DevolutionsService {
     private List<Devolution> devolutions = new ArrayList<>();
 
@@ -20,17 +19,17 @@ public class DevolutionsService {
         return devolutions;
     }
 
-    public boolean addDevolution(Integer order, String customer, String schedule, String building, String pictureUri){
-        if(findDevolutionByOrder(order) != null) return false;
-        Devolution devolution = new Devolution(order, customer, schedule, building, pictureUri);
+    public boolean addDevolution(Integer numberOrder, String customer, String schedule, String building, String pictureUri){
+        if(findDevolutionByNumerOrder(numberOrder) != null) return false;
+        Devolution devolution = new Devolution(numberOrder, customer, schedule, building, pictureUri);
         this.devolutions.add(devolution);
         devolution.save();
         return true;
     }
 
-    public Devolution findDevolutionByOrder(Integer order){
+    public Devolution findDevolutionByNumerOrder(Integer numberOrder){
         Devolution devolution = null;
-        List<Devolution> results = Devolution.find(Devolution.class, "number_order = ?", order.toString());
+        List<Devolution> results = Devolution.find(Devolution.class, "number_order = ?", numberOrder.toString());
         if(results !=null && results.size() > 0)
             devolution = results.get(0);
         return devolution;

@@ -13,13 +13,13 @@ import android.widget.TextView;
 import java.util.List;
 
 import pe.com.unispan.mobile.R;
+import pe.com.unispan.mobile.activities.DevolutionActivity;
 import pe.com.unispan.mobile.activities.MainActivity;
 import pe.com.unispan.mobile.model.Devolution;
 
 /**
  * Created by emarquez on 3/10/2016.
  */
-
 public class DevolutionsAdapter extends
         RecyclerView.Adapter<DevolutionsAdapter.ViewHolder> {
     private List<Devolution> devolutions;
@@ -29,16 +29,18 @@ public class DevolutionsAdapter extends
     }
 
     @Override
-    public DevolutionsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public DevolutionsAdapter.ViewHolder onCreateViewHolder(
+            ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(parent.getContext())
-                .inflate(R.layout.card_view, parent, false);
+                .inflate(R.layout.card_devolution, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(DevolutionsAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(
+            DevolutionsAdapter.ViewHolder holder, final int position) {
         holder.customerTextView.setText(
                 getDevolutions().get(position).getCustomer());
         holder.buildTextView.setText(
@@ -50,7 +52,7 @@ public class DevolutionsAdapter extends
         holder.devolutionCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent itemIntent = new Intent(view.getContext(), MainActivity.class);
+                Intent itemIntent = new Intent(view.getContext(), DevolutionActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("customer", getDevolutions().get(position).getCustomer());
                 bundle.putString("build", getDevolutions().get(position).getBuilding());
@@ -63,7 +65,7 @@ public class DevolutionsAdapter extends
 
     @Override
     public int getItemCount() {
-        return 0;
+        return getDevolutions().size();
     }
 
     public List<Devolution> getDevolutions() {

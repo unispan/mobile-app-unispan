@@ -5,7 +5,6 @@ import com.orm.SugarRecord;
 /**
  * Created by emarquez on 3/10/2016.
  */
-
 public class Devolution extends SugarRecord {
     private Integer numberOrder;
     private String customer;
