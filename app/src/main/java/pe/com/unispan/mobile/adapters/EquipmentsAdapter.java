@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import pe.com.unispan.mobile.R;
+import pe.com.unispan.mobile.activities.DevolutionByEquipmentActivity;
 import pe.com.unispan.mobile.activities.EquipmentActivity;
 import pe.com.unispan.mobile.model.Equipment;
 
@@ -48,7 +49,7 @@ public class EquipmentsAdapter extends
         holder.equipmentCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent itemIntent = new Intent(view.getContext(), EquipmentActivity.class);
+                Intent itemIntent = new Intent(view.getContext(), DevolutionByEquipmentActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("nameEquipment", getEquipments().get(position).getNameEquipment());
                 bundle.putString("stateEquipment", getEquipments().get(position).getStateEquipment());
