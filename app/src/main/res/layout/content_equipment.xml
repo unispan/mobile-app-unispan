@@ -27,14 +27,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cliente"
+                android:text="@string/string_sample_customer"
                 android:id="@id/customerTextView"
                 android:textStyle="italic"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Proyecto"
+                android:text="@string/string_sample_proyect"
                 android:id="@id/buildTextView"
                 android:paddingTop="20dp"
                 android:textStyle="bold"
@@ -43,7 +43,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Grupo"
+                android:text="@string/string_sample_name_group"
                 android:id="@id/nameGroupTextView"
                 android:textStyle="italic"/>
         </LinearLayout>

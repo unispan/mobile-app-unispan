@@ -28,19 +28,19 @@
                 android:textStyle="bold"
                 android:textSize="18dp"
                 android:gravity="end"
-                android:text="Nombre del cliente"
+                android:text="@string/string_sample_customer"
                 android:id="@+id/customerTextView"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16dp"
-                android:text="Direccion de la Obra"
+                android:text="@string/string_sample_proyect"
                 android:id="@+id/buildTextView"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="italic"
-                android:text="08:00 - 10:00"
+                android:text="@string/string_sample_schedule"
                 android:id="@+id/scheduledTextView"/>
         </LinearLayout>
     </LinearLayout>

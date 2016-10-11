@@ -23,7 +23,7 @@
                 android:textStyle="bold"
                 android:textSize="18dp"
                 android:gravity="end"
-                android:text="Grupo"
+                android:text="@string/string_sample_name_group"
                 android:id="@+id/nameGroupTextView"/>
             <TextView
                 android:layout_width="wrap_content"

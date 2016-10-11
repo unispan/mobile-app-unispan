@@ -25,4 +25,11 @@
     <string name="title_activity_devolution">DevolutionActivity</string>
     <string name="title_activity_equipment">EquipmentActivity</string>
     <string name="title_activity_devolution_by_equipment">DevolutionByEquipmentActivity</string>
+
+    <string name="string_sample_customer">Los Constructores SAC</string>
+    <string name="string_sample_proyect">Edificio Los Alamos</string>
+    <string name="string_sample_name_group">Encofrados AllSteel</string>
+    <string name="string_sample_name_equiment">Equipo 1</string>
+    <string name="string_sample_state_equiment">Pendiente</string>
+    <string name="string_sample_schedule">08:00 - 10:00</string>
 </resources>
