@@ -26,10 +26,20 @@
     <string name="title_activity_equipment">EquipmentActivity</string>
     <string name="title_activity_devolution_by_equipment">DevolutionByEquipmentActivity</string>
 
+    <string name="string_label_equiment">Equipo:</string>
+    <string name="string_label_id_equiment">ID:</string>
+    <string name="string_label_state">Situación:</string>
+
+    <string name="string_label_state_clean">Por Limpieza</string>
+    <string name="string_label_state_repair">Por Limpieza</string>
+    <string name="string_label_state_replacement">Por Reposición</string>
+
     <string name="string_sample_customer">Los Constructores SAC</string>
     <string name="string_sample_proyect">Edificio Los Alamos</string>
     <string name="string_sample_name_group">Encofrados AllSteel</string>
+    <string name="string_sample_count_group">0 de 4</string>
     <string name="string_sample_name_equiment">Equipo 1</string>
     <string name="string_sample_state_equiment">Pendiente</string>
     <string name="string_sample_schedule">08:00 - 10:00</string>
+    <string name="string_sample_id_equiment">ID</string>
 </resources>

@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:textStyle="italic"
                 android:layout_gravity="end"
-                android:text="0 de 10"
+                android:text="@string/string_sample_count_group"
                 android:id="@+id/countGroupTextView"/>
         </LinearLayout>
     </LinearLayout>

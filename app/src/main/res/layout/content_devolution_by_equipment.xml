@@ -56,15 +56,15 @@
             <TextView
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
-                android:text="Equipo"
+                android:text="@string/string_label_equiment"
                 android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Equipo 1"
+                android:text="@string/string_sample_name_equiment"
                 android:textStyle="italic"
-                android:id="@+id/DetalleNameEquipo"/>
+                android:id="@+id/nameEquipmentTextView"/>
         </LinearLayout>
 
         <LinearLayout
@@ -75,17 +75,16 @@
             <TextView
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
-                android:text="ID"
+                android:text="@string/string_label_id_equiment"
                 android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="ID"
+                android:text="@string/string_sample_id_equiment"
                 android:textStyle="italic"
-                android:id="@+id/DetalleID"/>
+                android:id="@+id/idEquimentTextView"/>
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -95,7 +94,7 @@
             <TextView
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
-                android:text="Situacion"
+                android:text="@string/string_label_state"
                 android:textStyle="bold"/>
 
             <LinearLayout
@@ -107,29 +106,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="italic"
-                    android:text="Por Limpieza"
+                    android:text="@string/string_label_state_clean"
                     android:id="@+id/PorLimpiezaTextView"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="italic"
-                    android:text="Por Reparación"
+                    android:text="@string/string_label_state_repair"
                     android:id="@+id/PorReparacionTextView"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="italic"
-                    android:text="Por Reposición"
+                    android:text="@string/string_label_state_replacement"
                     android:id="@+id/PorReposicionTextView"/>
 
             </LinearLayout>
 
-
-
         </LinearLayout>
 
-
     </LinearLayout>
-
 
 </RelativeLayout>
