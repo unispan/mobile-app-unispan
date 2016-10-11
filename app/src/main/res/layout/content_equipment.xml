@@ -13,4 +13,48 @@
     tools:context="pe.com.unispan.mobile.activities.EquipmentActivity"
     tools:showIn="@layout/activity_equipment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cliente"
+                android:id="@id/customerTextView"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Proyecto"
+                android:id="@id/buildTextView"
+                android:paddingTop="20dp"
+                android:textStyle="bold"
+                android:gravity="end"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Grupo"
+                android:id="@id/nameGroupTextView"
+                android:textStyle="italic"/>
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/equipmentRecyclerView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+    </LinearLayout>
+
 </RelativeLayout>

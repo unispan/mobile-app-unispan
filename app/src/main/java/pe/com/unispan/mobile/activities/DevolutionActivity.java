@@ -26,11 +26,11 @@ public class DevolutionActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Log.d("Devolution", "Crear groupRecyclerView 1");
+        Log.d("Devolution", "Crear equipmentRecyclerView 1");
         groupRecyclerView = (RecyclerView) findViewById(R.id.groupRecyclerView);
-        Log.d("Devolution", "Crear groupRecyclerView 2");
+        Log.d("Devolution", "Crear equipmentRecyclerView 2");
         groupRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        Log.d("Devolution", "Crear groupRecyclerView 3");
+        Log.d("Devolution", "Crear equipmentRecyclerView 3");
         groupRecyclerView.setAdapter(new GroupsAdapter(getService().getGrupos()));
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
