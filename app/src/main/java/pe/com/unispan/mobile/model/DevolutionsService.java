@@ -36,8 +36,10 @@ public class DevolutionsService {
     }
 
     private void initializeData(){
-        this.addDevolution(1, "Los Constructores SAC", "08:00 - 10:00", "Edificio Los Alamos", Integer.toString(R.mipmap.ic_scheduled));
-        this.addDevolution(2, "GyN SAC", "10:00 - 12:00", "CC Los Laureles", Integer.toString(R.mipmap.ic_scheduled));
+        this.addDevolution(1, "Los Constructores SAC", "08:00 - 10:00", "Edificio Los Alamos", Integer.toString(R.mipmap.ic_one));
+        this.addDevolution(2, "GyN SAC", "10:00 - 12:00", "CC Los Laureles", Integer.toString(R.mipmap.ic_two));
+        this.addDevolution(3, "GyN SAC", "10:00 - 12:00", "CC Los Laureles", Integer.toString(R.mipmap.ic_three));
+        this.addDevolution(4, "GyN SAC", "10:00 - 12:00", "CC Los Laureles", Integer.toString(R.mipmap.ic_four));
     }
 }
 
