@@ -3,6 +3,7 @@ package pe.com.unispan.mobile;
 import com.orm.SugarApp;
 
 import pe.com.unispan.mobile.model.DevolutionsService;
+import pe.com.unispan.mobile.model.GroupsService;
 
 /**
  * Created by emarquez on 01/10/16.
@@ -10,6 +11,7 @@ import pe.com.unispan.mobile.model.DevolutionsService;
 
 public class MobileApp extends SugarApp {
     private DevolutionsService service = new DevolutionsService();
+    private GroupsService groupsService = new GroupsService();
 
   // @Override
   //  public void onCreate() {
@@ -29,5 +31,13 @@ public class MobileApp extends SugarApp {
 
     public void setService(DevolutionsService service) {
         this.service = service;
+    }
+
+    public GroupsService getGroupsService() {
+        return groupsService;
+    }
+
+    public void setGroupsService(GroupsService groupsService) {
+        this.groupsService = groupsService;
     }
 }
