@@ -42,6 +42,10 @@
         <activity
             android:name=".activities.EquipmentActivity"
             android:label="@string/title_activity_equipment"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.DevolutionByEquipmentActivity"
+            android:label="@string/title_activity_devolution_by_equipment"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
